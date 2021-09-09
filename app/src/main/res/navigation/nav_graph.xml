@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="ru.bestk1ng.bestcalculator.FirstFragment"
+        android:name="ru.bestk1ng.bestcalculator.SimpleCalculatorFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first">
 
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="ru.bestk1ng.bestcalculator.SecondFragment"
+        android:name="ru.bestk1ng.bestcalculator.ComplexCalculatorFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
 
