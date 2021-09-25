@@ -1,4 +1,4 @@
-package ru.bestk1ng.bestcalculator
+package ru.bestk1ng.k1ngcalculator
 
 abstract class Operation {
     abstract val displaySymbol: String

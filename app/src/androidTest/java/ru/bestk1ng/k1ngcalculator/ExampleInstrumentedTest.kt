@@ -1,4 +1,4 @@
-package ru.bestk1ng.bestcalculator
+package ru.bestk1ng.k1ngcalculator
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

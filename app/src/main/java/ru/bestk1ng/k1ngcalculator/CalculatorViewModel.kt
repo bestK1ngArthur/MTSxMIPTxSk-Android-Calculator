@@ -1,4 +1,4 @@
-package ru.bestk1ng.bestcalculator
+package ru.bestk1ng.k1ngcalculator
 
 import androidx.lifecycle.ViewModel
 
