@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/calculator_outline.xml" value="0.6777777777777778" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.4832427536231884" />
         <entry key="app/src/main/res/layout/calculator_fragment.xml" value="0.5" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.4832427536231884" />

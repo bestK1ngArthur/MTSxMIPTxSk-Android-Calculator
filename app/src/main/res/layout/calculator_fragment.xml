@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/base_0"
     tools:context=".CalculatorFragment">
 
     <TextView
@@ -15,7 +16,9 @@
         android:layout_marginBottom="28dp"
         android:text="@string/hello_first_fragment"
         android:textAlignment="textEnd"
-        android:textSize="24sp"
+        android:textColor="@color/text"
+        android:textSize="34sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -24,10 +27,13 @@
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="28dp"
+        android:background="@drawable/calculator_outline"
+        android:backgroundTint="@color/base_10"
         android:orientation="vertical"
+        android:paddingStart="28dp"
+        android:paddingTop="28dp"
+        android:paddingEnd="28dp"
+        android:paddingBottom="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,12 +51,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:backgroundTint="#009688"
+                android:backgroundTint="@color/base_20"
+                android:fontFamily="sans-serif"
                 android:insetLeft="4dp"
                 android:insetTop="4dp"
                 android:insetRight="4dp"
                 android:insetBottom="4dp"
+                android:stateListAnimator="@null"
                 android:text="AC"
+                android:textColor="@color/text_green"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 app:cornerRadius="12dp" />
 
             <com.google.android.material.button.MaterialButton
@@ -59,12 +70,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:backgroundTint="#009688"
+                android:backgroundTint="@color/base_20"
+                android:fontFamily="sans-serif"
                 android:insetLeft="4dp"
                 android:insetTop="4dp"
                 android:insetRight="4dp"
                 android:insetBottom="4dp"
+                android:stateListAnimator="@null"
                 android:text="±"
+                android:textColor="@color/text_green"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 app:cornerRadius="12dp" />
 
             <com.google.android.material.button.MaterialButton
@@ -73,12 +89,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:backgroundTint="#009688"
+                android:backgroundTint="@color/base_20"
+                android:fontFamily="sans-serif"
                 android:insetLeft="4dp"
                 android:insetTop="4dp"
                 android:insetRight="4dp"
                 android:insetBottom="4dp"
+                android:stateListAnimator="@null"
                 android:text="%"
+                android:textColor="@color/text_green"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 app:cornerRadius="12dp" />
 
             <com.google.android.material.button.MaterialButton
@@ -87,12 +108,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:backgroundTint="#009688"
+                android:backgroundTint="@color/base_20"
+                android:fontFamily="sans-serif"
                 android:insetLeft="4dp"
                 android:insetTop="4dp"
                 android:insetRight="4dp"
                 android:insetBottom="4dp"
+                android:stateListAnimator="@null"
                 android:text="÷"
+                android:textColor="@color/text_red"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 app:cornerRadius="12dp" />
         </LinearLayout>
 
@@ -108,12 +134,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:backgroundTint="#009688"
+                android:backgroundTint="@color/base_20"
+                android:fontFamily="sans-serif"
                 android:insetLeft="4dp"
                 android:insetTop="4dp"
                 android:insetRight="4dp"
                 android:insetBottom="4dp"
+                android:stateListAnimator="@null"
                 android:text="7"
+                android:textColor="@color/text"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 app:cornerRadius="12dp" />
 
             <com.google.android.material.button.MaterialButton
@@ -122,12 +153,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:backgroundTint="#009688"
+                android:backgroundTint="@color/base_20"
+                android:fontFamily="sans-serif"
                 android:insetLeft="4dp"
                 android:insetTop="4dp"
                 android:insetRight="4dp"
                 android:insetBottom="4dp"
+                android:stateListAnimator="@null"
                 android:text="8"
+                android:textColor="@color/text"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 app:cornerRadius="12dp" />
 
             <com.google.android.material.button.MaterialButton
@@ -136,12 +172,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:backgroundTint="#009688"
+                android:backgroundTint="@color/base_20"
+                android:fontFamily="sans-serif"
                 android:insetLeft="4dp"
                 android:insetTop="4dp"
                 android:insetRight="4dp"
                 android:insetBottom="4dp"
+                android:stateListAnimator="@null"
                 android:text="9"
+                android:textColor="@color/text"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 app:cornerRadius="12dp" />
 
             <com.google.android.material.button.MaterialButton
@@ -150,12 +191,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:backgroundTint="#009688"
+                android:backgroundTint="@color/base_20"
+                android:fontFamily="sans-serif"
                 android:insetLeft="4dp"
                 android:insetTop="4dp"
                 android:insetRight="4dp"
                 android:insetBottom="4dp"
+                android:stateListAnimator="@null"
                 android:text="×"
+                android:textColor="@color/text_red"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 app:cornerRadius="12dp" />
         </LinearLayout>
 
@@ -171,12 +217,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:backgroundTint="#009688"
+                android:backgroundTint="@color/base_20"
+                android:fontFamily="sans-serif"
                 android:insetLeft="4dp"
                 android:insetTop="4dp"
                 android:insetRight="4dp"
                 android:insetBottom="4dp"
+                android:stateListAnimator="@null"
                 android:text="4"
+                android:textColor="@color/text"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 app:cornerRadius="12dp" />
 
             <com.google.android.material.button.MaterialButton
@@ -185,12 +236,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:backgroundTint="#009688"
+                android:backgroundTint="@color/base_20"
+                android:fontFamily="sans-serif"
                 android:insetLeft="4dp"
                 android:insetTop="4dp"
                 android:insetRight="4dp"
                 android:insetBottom="4dp"
+                android:stateListAnimator="@null"
                 android:text="5"
+                android:textColor="@color/text"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 app:cornerRadius="12dp" />
 
             <com.google.android.material.button.MaterialButton
@@ -199,12 +255,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:backgroundTint="#009688"
+                android:backgroundTint="@color/base_20"
+                android:fontFamily="sans-serif"
                 android:insetLeft="4dp"
                 android:insetTop="4dp"
                 android:insetRight="4dp"
                 android:insetBottom="4dp"
+                android:stateListAnimator="@null"
                 android:text="6"
+                android:textColor="@color/text"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 app:cornerRadius="12dp" />
 
             <com.google.android.material.button.MaterialButton
@@ -213,12 +274,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:backgroundTint="#009688"
+                android:backgroundTint="@color/base_20"
+                android:fontFamily="sans-serif"
                 android:insetLeft="4dp"
                 android:insetTop="4dp"
                 android:insetRight="4dp"
                 android:insetBottom="4dp"
+                android:stateListAnimator="@null"
                 android:text="-"
+                android:textColor="@color/text_red"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 app:cornerRadius="12dp" />
         </LinearLayout>
 
@@ -234,12 +300,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:backgroundTint="#009688"
+                android:backgroundTint="@color/base_20"
+                android:fontFamily="sans-serif"
                 android:insetLeft="4dp"
                 android:insetTop="4dp"
                 android:insetRight="4dp"
                 android:insetBottom="4dp"
+                android:stateListAnimator="@null"
                 android:text="1"
+                android:textColor="@color/text"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 app:cornerRadius="12dp" />
 
             <com.google.android.material.button.MaterialButton
@@ -248,12 +319,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:backgroundTint="#009688"
+                android:backgroundTint="@color/base_20"
+                android:fontFamily="sans-serif"
                 android:insetLeft="4dp"
                 android:insetTop="4dp"
                 android:insetRight="4dp"
                 android:insetBottom="4dp"
+                android:stateListAnimator="@null"
                 android:text="2"
+                android:textColor="@color/text"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 app:cornerRadius="12dp" />
 
             <com.google.android.material.button.MaterialButton
@@ -262,12 +338,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:backgroundTint="#009688"
+                android:backgroundTint="@color/base_20"
+                android:fontFamily="sans-serif"
                 android:insetLeft="4dp"
                 android:insetTop="4dp"
                 android:insetRight="4dp"
                 android:insetBottom="4dp"
+                android:stateListAnimator="@null"
                 android:text="3"
+                android:textColor="@color/text"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 app:cornerRadius="12dp" />
 
             <com.google.android.material.button.MaterialButton
@@ -276,12 +357,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:backgroundTint="#009688"
+                android:backgroundTint="@color/base_20"
+                android:fontFamily="sans-serif"
                 android:insetLeft="4dp"
                 android:insetTop="4dp"
                 android:insetRight="4dp"
                 android:insetBottom="4dp"
+                android:stateListAnimator="@null"
                 android:text="+"
+                android:textColor="@color/text_red"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 app:cornerRadius="12dp" />
         </LinearLayout>
 
@@ -297,12 +383,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:backgroundTint="#009688"
+                android:backgroundTint="@color/base_20"
+                android:fontFamily="sans-serif"
                 android:insetLeft="4dp"
                 android:insetTop="4dp"
                 android:insetRight="4dp"
                 android:insetBottom="4dp"
+                android:stateListAnimator="@null"
                 android:text="←"
+                android:textColor="@color/text"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 app:cornerRadius="12dp" />
 
             <com.google.android.material.button.MaterialButton
@@ -311,12 +402,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:backgroundTint="#009688"
+                android:backgroundTint="@color/base_20"
+                android:fontFamily="sans-serif"
                 android:insetLeft="4dp"
                 android:insetTop="4dp"
                 android:insetRight="4dp"
                 android:insetBottom="4dp"
+                android:stateListAnimator="@null"
                 android:text="0"
+                android:textColor="@color/text"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 app:cornerRadius="12dp" />
 
             <com.google.android.material.button.MaterialButton
@@ -325,12 +421,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:backgroundTint="#009688"
+                android:backgroundTint="@color/base_20"
+                android:fontFamily="sans-serif"
                 android:insetLeft="4dp"
                 android:insetTop="4dp"
                 android:insetRight="4dp"
                 android:insetBottom="4dp"
+                android:stateListAnimator="@null"
                 android:text="."
+                android:textColor="@color/text"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 app:cornerRadius="12dp" />
 
             <com.google.android.material.button.MaterialButton
@@ -339,12 +440,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:backgroundTint="#009688"
+                android:backgroundTint="@color/base_20"
+                android:fontFamily="sans-serif"
                 android:insetLeft="4dp"
                 android:insetTop="4dp"
                 android:insetRight="4dp"
                 android:insetBottom="4dp"
+                android:stateListAnimator="@null"
                 android:text="="
+                android:textColor="@color/text_red"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 app:cornerRadius="12dp" />
 
         </LinearLayout>
