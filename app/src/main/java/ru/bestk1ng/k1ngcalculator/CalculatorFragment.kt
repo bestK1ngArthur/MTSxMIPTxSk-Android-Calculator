@@ -9,7 +9,7 @@ import android.widget.Button
 import androidx.navigation.fragment.findNavController
 
 /**
- * A simple [Fragment] subclass as the default destination in the navigation.
+ * Calculator fragment.
  */
 class CalculatorFragment : Fragment() {
 
@@ -23,6 +23,7 @@ class CalculatorFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
     }
 }

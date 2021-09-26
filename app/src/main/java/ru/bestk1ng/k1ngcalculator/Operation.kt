@@ -1,26 +1,49 @@
 package ru.bestk1ng.k1ngcalculator
 
+import java.lang.Exception
+
+enum class OperationName(val symbol: String) {
+    SUM("+"),
+    SUBTRACT("-"),
+    MULTIPLY("×"),
+    DIVIDE("÷")
+}
+
 abstract class Operation {
-    abstract val displaySymbol: String
+    abstract val name: OperationName
     abstract val operandsCount: Int
 
     abstract fun operate(operands: List<Double>): Double
 }
 
-class SumOperation(
-    override val displaySymbol: String,
+class SumOperation : Operation() {
+    override val name: OperationName
+        get() = OperationName.SUM
+
     override val operandsCount: Int
-) : Operation() {
+        get() = 2
+
     override fun operate(operands: List<Double>): Double {
+        if (operands.count() != operandsCount) {
+            throw Exception("Wrong operand's count")
+        }
+
         return operands.sum()
     }
 }
 
-class SubtractOperation(
-    override val displaySymbol: String,
+class SubtractOperation : Operation() {
+    override val name: OperationName
+        get() = OperationName.SUBTRACT
+
     override val operandsCount: Int
-) : Operation() {
+        get() = 2
+
     override fun operate(operands: List<Double>): Double {
-        return operands.sum()
+        if (operands.count() != operandsCount) {
+            throw Exception("Wrong operand's count")
+        }
+
+        return operands[1] - operands[2]
     }
 }
