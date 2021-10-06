@@ -1,64 +1,81 @@
 package ru.bestk1ng.k1ngcalculator
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import by.kirich1409.viewbindingdelegate.viewBinding
 
 import ru.bestk1ng.k1ngcalculator.databinding.CalculatorFragmentBinding
 
 /**
  * Calculator Fragment.
  */
-class CalculatorFragment : Fragment() {
+class CalculatorFragment : Fragment(R.layout.calculator_fragment) {
 
-    private lateinit var binding: CalculatorFragmentBinding
-    private lateinit var viewModel: CalculatorViewModel
+    private val viewBinding by viewBinding(CalculatorFragmentBinding::bind)
+    private val viewModel: CalculatorViewModel by viewModels() {
+        CalculatorViewModel.Factory(Calculator())
+    }
 
-    override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? {
-        binding = CalculatorFragmentBinding.inflate(inflater, container, false)
-        viewModel = CalculatorViewModel(Calculator())
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        with(viewBinding) {
 
-        viewModel.expression.observe(viewLifecycleOwner, Observer { expression ->
-            binding.expressionTextView.text = expression.toString()
-        })
+            viewModel.expression.observe(viewLifecycleOwner, Observer { expression ->
+                viewBinding.expressionTextView.text = expression.toString()
+            })
 
-        viewModel.result.observe(viewLifecycleOwner, Observer { result ->
-            binding.resultTextView.text = result.toString()
-        })
+            viewModel.result.observe(viewLifecycleOwner, Observer { result ->
+                viewBinding.resultTextView.text = result.toString()
+            })
 
-        val digitButtons = listOf(
-            binding.keyButtonValue0,
-            binding.keyButtonValue1,
-            binding.keyButtonValue2,
-            binding.keyButtonValue3,
-            binding.keyButtonValue4,
-            binding.keyButtonValue5,
-            binding.keyButtonValue6,
-            binding.keyButtonValue7,
-            binding.keyButtonValue8,
-            binding.keyButtonValue9
-        )
+            val digitButtons = listOf(
+                viewBinding.keyButtonValue0,
+                viewBinding.keyButtonValue1,
+                viewBinding.keyButtonValue2,
+                viewBinding.keyButtonValue3,
+                viewBinding.keyButtonValue4,
+                viewBinding.keyButtonValue5,
+                viewBinding.keyButtonValue6,
+                viewBinding.keyButtonValue7,
+                viewBinding.keyButtonValue8,
+                viewBinding.keyButtonValue9
+            )
 
-        digitButtons.forEach {
-            val digit = it.text
-                .toString()
-                .toDouble()
+            digitButtons.forEach {
+                val digit = it.text
+                    .toString()
+                    .toDouble()
 
-            it.setOnClickListener {
-                viewModel.onDigit(digit)
+                it.setOnClickListener {
+                    viewModel.onDigit(digit)
+                }
+            }
+
+            val operationsButtons = listOf(
+                viewBinding.keyButtonDivision,
+                viewBinding.keyButtonMultiplication,
+                viewBinding.keyButtonSubtraction,
+                viewBinding.keyButtonAddition
+            )
+
+            operationsButtons.forEach {
+                val name = it.text.toString()
+
+                it.setOnClickListener {
+                    viewModel.onOperation(name)
+                }
+            }
+
+            viewBinding.keyButtonEqual.setOnClickListener {
+                viewModel.onResult()
+            }
+
+            viewBinding.keyButtonMode.setOnClickListener {
+                viewModel.onReset()
             }
         }
-
-        binding.keyButtonEqual.setOnClickListener {
-            viewModel.onResult()
-        }
-
-        return binding.root
     }
 }
