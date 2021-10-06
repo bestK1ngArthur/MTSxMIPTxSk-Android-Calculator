@@ -18,7 +18,7 @@ class Calculator {
         return equation
     }
 
-    fun clear() {
+    fun reset() {
         equations.clear()
     }
 

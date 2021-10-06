@@ -8,7 +8,7 @@
     tools:context=".CalculatorFragment">
 
     <TextView
-        android:id="@+id/textview_result"
+        android:id="@+id/result_textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
@@ -24,7 +24,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView_expression"
+        android:id="@+id/expression_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="28dp"
@@ -33,7 +33,7 @@
         android:textAlignment="textEnd"
         android:textColor="@color/text"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/textview_result"
+        app:layout_constraintBottom_toTopOf="@+id/result_textView"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <LinearLayout

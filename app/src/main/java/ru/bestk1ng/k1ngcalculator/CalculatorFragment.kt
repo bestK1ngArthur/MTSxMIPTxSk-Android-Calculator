@@ -5,25 +5,60 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import androidx.navigation.fragment.findNavController
+import androidx.lifecycle.Observer
+
+import ru.bestk1ng.k1ngcalculator.databinding.CalculatorFragmentBinding
 
 /**
- * Calculator fragment.
+ * Calculator Fragment.
  */
 class CalculatorFragment : Fragment() {
+
+    private lateinit var binding: CalculatorFragmentBinding
+    private lateinit var viewModel: CalculatorViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.calculator_fragment, container, false)
-    }
+        binding = CalculatorFragmentBinding.inflate(inflater, container, false)
+        viewModel = CalculatorViewModel(Calculator())
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        viewModel.expression.observe(viewLifecycleOwner, Observer { expression ->
+            binding.expressionTextView.text = expression.toString()
+        })
 
+        viewModel.result.observe(viewLifecycleOwner, Observer { result ->
+            binding.resultTextView.text = result.toString()
+        })
 
+        val digitButtons = listOf(
+            binding.keyButtonValue0,
+            binding.keyButtonValue1,
+            binding.keyButtonValue2,
+            binding.keyButtonValue3,
+            binding.keyButtonValue4,
+            binding.keyButtonValue5,
+            binding.keyButtonValue6,
+            binding.keyButtonValue7,
+            binding.keyButtonValue8,
+            binding.keyButtonValue9
+        )
+
+        digitButtons.forEach {
+            val digit = it.text
+                .toString()
+                .toDouble()
+
+            it.setOnClickListener {
+                viewModel.onDigit(digit)
+            }
+        }
+
+        binding.keyButtonEqual.setOnClickListener {
+            viewModel.onResult()
+        }
+
+        return binding.root
     }
 }
