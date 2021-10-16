@@ -2,11 +2,15 @@ package ru.bestk1ng.k1ngcalculator
 
 import java.lang.Exception
 
-enum class OperationName(val symbol: String) {
+enum class OperationName constructor(val symbol: String) {
     SUM("+"),
     SUBTRACT("-"),
     MULTIPLY("×"),
-    DIVIDE("÷")
+    DIVIDE("÷");
+
+    companion object {
+        fun from(symbol: String): OperationName? = OperationName.values().firstOrNull { it.symbol == symbol }
+    }
 }
 
 abstract class Operation {

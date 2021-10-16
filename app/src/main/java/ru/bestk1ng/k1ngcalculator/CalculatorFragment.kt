@@ -13,7 +13,6 @@ import ru.bestk1ng.k1ngcalculator.databinding.CalculatorFragmentBinding
  * Calculator Fragment.
  */
 class CalculatorFragment : Fragment(R.layout.calculator_fragment) {
-
     private val viewBinding by viewBinding(CalculatorFragmentBinding::bind)
     private val viewModel: CalculatorViewModel by viewModels() {
         CalculatorViewModel.Factory(Calculator())
