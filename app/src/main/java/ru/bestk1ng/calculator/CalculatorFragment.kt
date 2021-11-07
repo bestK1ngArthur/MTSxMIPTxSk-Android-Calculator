@@ -76,6 +76,10 @@ class CalculatorFragment : Fragment(R.layout.calculator_fragment) {
             viewBinding.keyButtonMode.setOnClickListener {
                 viewModel.onReset()
             }
+
+            viewBinding.keyButtonSign.setOnClickListener {
+                viewModel.onSign()
+            }
         }
     }
 }

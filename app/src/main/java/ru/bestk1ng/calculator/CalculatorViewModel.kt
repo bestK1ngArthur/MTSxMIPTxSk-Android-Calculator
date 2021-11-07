@@ -28,54 +28,115 @@ class CalculatorViewModel(private val calculator: Calculator): ViewModel() {
 
     private val operands = mutableListOf<Double>()
 
-    private var currentOperand = 0.0
+    private var currentOperand: Double? = null
     private var currentOperationName: OperationName? = null
 
-    fun onDigit(digit: Double) {
-        currentOperand = currentOperand * 10 + digit
+    private var isAfterResult: Boolean = false
 
-        _result.postValue(formatValue(currentOperand))
+    private val hasOperation: Boolean
+        get() = currentOperationName != null
+
+    fun onDigit(digit: Double) {
+        if (isAfterResult) {
+            isAfterResult = false
+            currentOperand = null
+            operands.clear()
+        }
+
+        currentOperand = (currentOperand ?: 0.0) * 10 + digit
+
+        _result.postValue(formatValue(currentOperand!!))
     }
 
     fun onOperation(name: String) {
-        val operationName = OperationName.from(name) ?: return
+        if (isAfterResult) {
+            isAfterResult = false
+        }
 
-        operands.add(currentOperand)
+        if (currentOperand == null) {
+            //TODO: Handle error
+            return
+        }
 
-        _expression.postValue("${ formatValue(currentOperand) } $name")
-        _result.postValue("")
-
-        currentOperationName = operationName
-        currentOperand = 0.0
+        if (hasOperation) {
+            onComplexOperation(name)
+        } else {
+            onSimpleOperation(name)
+        }
     }
 
     fun onResult() {
-        val operationName = currentOperationName ?: return
+        if ((currentOperand == null) || (currentOperationName == null)) {
+            //TODO: Handle error
+            return
+        }
 
-        operands.add(currentOperand)
+        operands.add(currentOperand!!)
 
-        val operation = calculator.calculate(operands, operationName)
+        val operation = calculator.calculate(operands, currentOperationName!!)
 
-        _expression.postValue(_expression.value + " ${ formatValue(currentOperand) }")
+        _expression.postValue(_expression.value + " ${ formatValue(currentOperand!!) }")
         _result.postValue(formatValue(operation.result))
 
         operands.clear()
-        operands.add(operation.result)
 
-        currentOperand = 0.0
+        currentOperand = operation.result
         currentOperationName = null
+
+        isAfterResult = true
     }
 
     fun onReset() {
+        if (isAfterResult) {
+            isAfterResult = false
+        }
+
         _expression.postValue("")
         _result.postValue("")
 
         operands.clear()
 
-        currentOperand = 0.0
+        currentOperand = null
         currentOperationName = null
 
         calculator.reset()
+    }
+
+    fun onSign() {
+        if (currentOperand == null) {
+            return
+        }
+
+        currentOperand = -1.0 * currentOperand!!
+        _result.postValue(formatValue(currentOperand!!))
+    }
+
+    private fun onSimpleOperation(name: String) {
+        val operationName = OperationName.from(name)!!
+
+        operands.add(currentOperand!!)
+
+        _expression.postValue("${ formatValue(currentOperand!!) } $name")
+        _result.postValue("")
+
+        currentOperationName = operationName
+        currentOperand = null
+    }
+
+    private fun onComplexOperation(name: String) {
+        operands.add(currentOperand!!)
+
+        val lastOperationName = currentOperationName!!
+        val lastOperation = calculator.calculate(operands, lastOperationName)
+
+        operands.clear()
+        operands.add(lastOperation.result)
+
+        currentOperand = null
+        currentOperationName = OperationName.from(name)!!
+
+        _expression.postValue("${ formatValue(lastOperation.result!!) } $name")
+        _result.postValue("")
     }
 
     private fun formatValue(value: Double): String {
