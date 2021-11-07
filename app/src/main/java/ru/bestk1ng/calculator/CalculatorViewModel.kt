@@ -1,19 +1,22 @@
 package ru.bestk1ng.calculator
 
+import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+
 import ru.bestk1ng.calculator.helpers.Calculator
 import ru.bestk1ng.calculator.helpers.OperationName
+import ru.bestk1ng.calculator.helpers.Settings
 
 /**
  * Calculator ViewModel.
  */
-class CalculatorViewModel(private val calculator: Calculator): ViewModel() {
-    class Factory(private val calculator: Calculator) : ViewModelProvider.Factory {
+class CalculatorViewModel(private val calculator: Calculator, private val context: Context): ViewModel() {
+    class Factory(private val calculator: Calculator, private val context: Context) : ViewModelProvider.Factory {
         override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-            return CalculatorViewModel(calculator) as T
+            return CalculatorViewModel(calculator, context) as T
         }
     }
 
@@ -22,6 +25,12 @@ class CalculatorViewModel(private val calculator: Calculator): ViewModel() {
 
     val result: LiveData<String>
         get() = _result
+
+
+    val vibroValue: Int?
+        get() = if (settings.vibroIsOn) settings.vibroValue else null
+
+    private val settings = Settings(context)
 
     private val _expression = MutableLiveData<String>()
     private val _result = MutableLiveData<String>()
@@ -140,10 +149,13 @@ class CalculatorViewModel(private val calculator: Calculator): ViewModel() {
     }
 
     private fun formatValue(value: Double): String {
+        println("FORMAT VALUE = ${value}")
+        println("ACCURACY = ${settings.accuracy}")
+
         val intValue = value.toInt()
 
         return if ((value - intValue) > 0) {
-            value.toString()
+            String.format("%.${settings.accuracy}f", value)
         } else {
             intValue.toString()
         }

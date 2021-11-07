@@ -3,11 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/CalculatorFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
+        android:id="@+id/CalculatorFragment"
         android:name="ru.bestk1ng.calculator.CalculatorFragment"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/calculator_fragment"/>
+        tools:layout="@layout/calculator_fragment">
+        <action
+            android:id="@+id/action_CalculatorFragment_to_SettingsFragment"
+            app:destination="@id/SettingsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/SettingsFragment"
+        android:name="ru.bestk1ng.calculator.SettingsFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/settings_fragment"/>
 </navigation>
