@@ -1,4 +1,4 @@
-package ru.bestk1ng.calculator
+package ru.bestk1ng.calculator.helpers
 
 data class Equation(
     val operands: List<Double>,

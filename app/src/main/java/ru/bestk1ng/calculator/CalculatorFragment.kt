@@ -8,6 +8,7 @@ import androidx.lifecycle.Observer
 import by.kirich1409.viewbindingdelegate.viewBinding
 
 import ru.bestk1ng.calculator.databinding.CalculatorFragmentBinding
+import ru.bestk1ng.calculator.helpers.Calculator
 
 /**
  * Calculator Fragment.

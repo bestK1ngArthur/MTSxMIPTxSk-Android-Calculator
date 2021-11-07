@@ -4,6 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import ru.bestk1ng.calculator.helpers.Calculator
+import ru.bestk1ng.calculator.helpers.OperationName
 
 /**
  * Calculator ViewModel.
