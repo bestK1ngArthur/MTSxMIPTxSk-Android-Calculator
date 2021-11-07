@@ -33,24 +33,24 @@ class CalculatorFragment : Fragment(R.layout.calculator_fragment) {
         with(viewBinding) {
 
             viewModel.expression.observe(viewLifecycleOwner, Observer { expression ->
-                viewBinding.expressionTextView.text = expression.toString()
+                expressionTextView.text = expression.toString()
             })
 
             viewModel.result.observe(viewLifecycleOwner, Observer { result ->
-                viewBinding.resultTextView.text = result.toString()
+                resultTextView.text = result.toString()
             })
 
             val digitButtons = listOf(
-                viewBinding.keyButtonValue0,
-                viewBinding.keyButtonValue1,
-                viewBinding.keyButtonValue2,
-                viewBinding.keyButtonValue3,
-                viewBinding.keyButtonValue4,
-                viewBinding.keyButtonValue5,
-                viewBinding.keyButtonValue6,
-                viewBinding.keyButtonValue7,
-                viewBinding.keyButtonValue8,
-                viewBinding.keyButtonValue9
+                keyButtonValue0,
+                keyButtonValue1,
+                keyButtonValue2,
+                keyButtonValue3,
+                keyButtonValue4,
+                keyButtonValue5,
+                keyButtonValue6,
+                keyButtonValue7,
+                keyButtonValue8,
+                keyButtonValue9
             )
 
             digitButtons.forEach {
@@ -65,12 +65,12 @@ class CalculatorFragment : Fragment(R.layout.calculator_fragment) {
             }
 
             val operationsButtons = listOf(
-                viewBinding.keyButtonDivision,
-                viewBinding.keyButtonMultiplication,
-                viewBinding.keyButtonSubtraction,
-                viewBinding.keyButtonAddition,
-                viewBinding.keyButtonPower,
-                viewBinding.keyButtonRoot
+                keyButtonDivision,
+                keyButtonMultiplication,
+                keyButtonSubtraction,
+                keyButtonAddition,
+                keyButtonPower,
+                keyButtonRoot
             )
 
             operationsButtons.forEach {
@@ -82,22 +82,22 @@ class CalculatorFragment : Fragment(R.layout.calculator_fragment) {
                 }
             }
 
-            viewBinding.keyButtonEqual.setOnClickListener {
+            keyButtonEqual.setOnClickListener {
                 viewModel.onResult()
                 vibrate(viewModel.vibroValue)
             }
 
-            viewBinding.keyButtonMode.setOnClickListener {
+            keyButtonMode.setOnClickListener {
                 viewModel.onReset()
                 vibrate(viewModel.vibroValue)
             }
 
-            viewBinding.keyButtonSign.setOnClickListener {
+            keyButtonSign.setOnClickListener {
                 viewModel.onSign()
                 vibrate(viewModel.vibroValue)
             }
 
-            viewBinding.keyButtonSettings.setOnClickListener {
+            keyButtonSettings.setOnClickListener {
                 val action = CalculatorFragmentDirections.actionCalculatorFragmentToSettingsFragment()
                 view.findNavController().navigate(action)
                 vibrate(viewModel.vibroValue)

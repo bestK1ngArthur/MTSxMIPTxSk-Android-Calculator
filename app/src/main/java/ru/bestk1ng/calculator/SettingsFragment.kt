@@ -35,31 +35,31 @@ class SettingsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         with(viewBinding) {
-            viewBinding.keyButtonBack.setOnClickListener {
+            keyButtonBack.setOnClickListener {
                 view.findNavController().popBackStack()
             }
 
             viewModel.accuracy.observe(viewLifecycleOwner, Observer { accuracy ->
-                viewBinding.accuracyNumber.setText(accuracy.toString())
+                accuracyNumber.setText(accuracy.toString())
             })
 
             viewModel.vibroIsOn.observe(viewLifecycleOwner, Observer { isOn ->
-                viewBinding.vibroSwitch.isChecked = isOn
+                vibroSwitch.isChecked = isOn
             })
 
             viewModel.vibroValue.observe(viewLifecycleOwner, Observer { value ->
-                viewBinding.vibroBar.progress = value.toInt()
+                vibroBar.progress = value.toInt()
             })
 
-            viewBinding.accuracyNumber.addTextChangedListener {
+            accuracyNumber.addTextChangedListener {
                 viewModel.setAccuracy(accuracyNumber.text.toString().toIntOrNull() ?: 0)
             }
 
-            viewBinding.vibroSwitch.setOnCheckedChangeListener { _, isChecked ->
+            vibroSwitch.setOnCheckedChangeListener { _, isChecked ->
                 viewModel.setVibro(isChecked)
             }
 
-            viewBinding.vibroBar.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener {
+            vibroBar.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener {
                 override fun onProgressChanged(p0: SeekBar?, currentValue: Int, p2: Boolean) {
                     viewModel.setVibroValue(currentValue)
                 }
