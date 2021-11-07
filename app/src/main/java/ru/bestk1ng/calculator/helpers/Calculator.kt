@@ -7,7 +7,9 @@ class Calculator {
         SumOperation(),
         SubtractOperation(),
         MultiplyOperation(),
-        DivideOperation()
+        DivideOperation(),
+        PowerOperation(),
+        RootOperation()
     )
     private val equations = mutableListOf<Equation>()
 

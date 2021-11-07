@@ -68,7 +68,9 @@ class CalculatorFragment : Fragment(R.layout.calculator_fragment) {
                 viewBinding.keyButtonDivision,
                 viewBinding.keyButtonMultiplication,
                 viewBinding.keyButtonSubtraction,
-                viewBinding.keyButtonAddition
+                viewBinding.keyButtonAddition,
+                viewBinding.keyButtonPower,
+                viewBinding.keyButtonRoot
             )
 
             operationsButtons.forEach {
