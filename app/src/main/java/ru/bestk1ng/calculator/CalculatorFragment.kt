@@ -1,4 +1,4 @@
-package ru.bestk1ng.k1ngcalculator
+package ru.bestk1ng.calculator
 
 import android.os.Bundle
 import android.view.View
@@ -7,7 +7,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import by.kirich1409.viewbindingdelegate.viewBinding
 
-import ru.bestk1ng.k1ngcalculator.databinding.CalculatorFragmentBinding
+import ru.bestk1ng.calculator.databinding.CalculatorFragmentBinding
 
 /**
  * Calculator Fragment.

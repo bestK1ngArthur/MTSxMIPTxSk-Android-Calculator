@@ -1,4 +1,4 @@
-package ru.bestk1ng.k1ngcalculator
+package ru.bestk1ng.calculator
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
