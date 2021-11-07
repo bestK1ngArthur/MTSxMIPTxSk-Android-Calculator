@@ -3,7 +3,12 @@ package ru.bestk1ng.calculator.helpers
 import java.lang.Exception
 
 class Calculator {
-    private val operations = setOf(SumOperation(), SubtractOperation())
+    private val operations = setOf(
+        SumOperation(),
+        SubtractOperation(),
+        MultiplyOperation(),
+        DivideOperation()
+    )
     private val equations = mutableListOf<Equation>()
 
     fun calculate(

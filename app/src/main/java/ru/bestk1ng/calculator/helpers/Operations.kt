@@ -48,6 +48,38 @@ class SubtractOperation : Operation() {
             throw Exception("Wrong operand's count")
         }
 
-        return operands[1] - operands[2]
+        return operands[0] - operands[1]
+    }
+}
+
+class MultiplyOperation : Operation() {
+    override val name: OperationName
+        get() = OperationName.MULTIPLY
+
+    override val operandsCount: Int
+        get() = 2
+
+    override fun operate(operands: List<Double>): Double {
+        if (operands.count() != operandsCount) {
+            throw Exception("Wrong operand's count")
+        }
+
+        return operands[0] * operands[1]
+    }
+}
+
+class DivideOperation : Operation() {
+    override val name: OperationName
+        get() = OperationName.DIVIDE
+
+    override val operandsCount: Int
+        get() = 2
+
+    override fun operate(operands: List<Double>): Double {
+        if (operands.count() != operandsCount) {
+            throw Exception("Wrong operand's count")
+        }
+
+        return operands[0] / operands[1]
     }
 }
