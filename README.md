@@ -1,4 +1,4 @@
-# MIPT-Android-Calculator
+# MTSxMIPTxSk-Android-Calculator
 
 Simple calculator app for educational purposes
 
@@ -13,7 +13,7 @@ Simple calculator app for educational purposes
 
 ## Features
 
-- [X] History of operations
+- [X] History (without persistence)
 - [X] Accuracy
 - [X] Vibration mode
 
