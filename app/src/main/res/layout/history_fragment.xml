@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_0"
+    tools:context=".SettingsFragment">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/key_button_back"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1"
+        android:backgroundTint="@color/base_20"
+        android:fontFamily="sans-serif"
+        android:insetLeft="4dp"
+        android:insetTop="4dp"
+        android:insetRight="4dp"
+        android:insetBottom="4dp"
+        android:isScrollContainer="false"
+        android:paddingRight="7.5dp"
+        android:stateListAnimator="@null"
+        android:textColor="@color/text_red"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:cornerRadius="25dp"
+        app:icon="@drawable/ic_back"
+        app:iconGravity="end"
+        app:iconPadding="0dp"
+        app:iconSize="26dp"
+        app:iconTint="@color/text_green"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="390dp"
+        android:layout_height="704dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/key_button_back" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,8 +7,9 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/calculator_fragment.xml" value="0.33510539742254286" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/equation_item.xml" value="0.24914529914529915" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.4832427536231884" />
-        <entry key="app/src/main/res/layout/history_fragment.xml" value="0.48233695652173914" />
+        <entry key="app/src/main/res/layout/history_fragment.xml" value="0.1" />
         <entry key="app/src/main/res/layout/settings_fragment.xml" value="0.2928501389060007" />
         <entry key="app/src/main/res/menu/menu_main.xml" value="0.17136752136752137" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2175925925925926" />

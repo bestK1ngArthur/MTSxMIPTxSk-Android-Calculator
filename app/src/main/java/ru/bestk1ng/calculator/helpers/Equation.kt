@@ -6,6 +6,18 @@ data class Equation(
     val result: Double
 ) {
     fun expression(): String {
-        return operands.fold("", { acc, d -> acc + "${operation.name.symbol} $d"  })
+        var string = ""
+
+        operands.forEachIndexed { index, operand ->
+            string += "$operand "
+
+            if (index != operands.size - 1) {
+                string += "${operation.name.symbol} "
+            }
+        }
+
+        string += "= $result"
+
+        return string
     }
 }

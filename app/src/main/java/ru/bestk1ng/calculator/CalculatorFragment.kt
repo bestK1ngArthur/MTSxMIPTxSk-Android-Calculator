@@ -1,9 +1,7 @@
 package ru.bestk1ng.calculator
 
-import android.content.Context
 import android.os.Bundle
 import android.os.VibrationEffect
-import android.view.HapticFeedbackConstants
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -18,7 +16,6 @@ import androidx.core.content.ContextCompat.getSystemService
 import android.os.Vibrator
 import android.widget.Toast
 
-
 /**
  * Calculator Fragment.
  */
@@ -31,7 +28,6 @@ class CalculatorFragment : Fragment(R.layout.calculator_fragment) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         with(viewBinding) {
-
             viewModel.expression.observe(viewLifecycleOwner, Observer { expression ->
                 expressionTextView.text = expression.toString()
             })
@@ -99,6 +95,12 @@ class CalculatorFragment : Fragment(R.layout.calculator_fragment) {
 
             keyButtonSettings.setOnClickListener {
                 val action = CalculatorFragmentDirections.actionCalculatorFragmentToSettingsFragment()
+                view.findNavController().navigate(action)
+                vibrate(viewModel.vibroValue)
+            }
+
+            keyButtonHistory.setOnClickListener {
+                val action = CalculatorFragmentDirections.actionCalculatorFragmentToHistoryFragment()
                 view.findNavController().navigate(action)
                 vibrate(viewModel.vibroValue)
             }

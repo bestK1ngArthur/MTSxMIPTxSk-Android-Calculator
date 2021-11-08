@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_CalculatorFragment_to_SettingsFragment"
             app:destination="@id/SettingsFragment" />
+        <action
+            android:id="@+id/action_CalculatorFragment_to_HistoryFragment"
+            app:destination="@id/HistoryFragment" />
     </fragment>
 
     <fragment
@@ -20,4 +23,10 @@
         android:name="ru.bestk1ng.calculator.SettingsFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/settings_fragment"/>
+
+    <fragment
+        android:id="@+id/HistoryFragment"
+        android:name="ru.bestk1ng.calculator.HistoryFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/history_fragment"/>
 </navigation>

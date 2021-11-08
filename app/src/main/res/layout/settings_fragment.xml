@@ -34,7 +34,6 @@
         app:iconPadding="0dp"
         app:iconSize="26dp"
         app:iconTint="@color/text_red"
-        app:layout_constraintEnd_toStartOf="@+id/key_button_settings"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
