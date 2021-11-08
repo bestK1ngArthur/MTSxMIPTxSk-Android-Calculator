@@ -23,7 +23,7 @@ import ru.bestk1ng.calculator.helpers.SumOperation
 class HistoryFragment : Fragment() {
     private val viewBinding by viewBinding(HistoryFragmentBinding::bind)
     private val viewModel: HistoryViewModel by viewModels() {
-        HistoryViewModel.Factory(Calculator)
+        HistoryViewModel.Factory(Calculator, requireContext())
     }
 
     override fun onCreateView(

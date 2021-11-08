@@ -23,7 +23,7 @@ object Calculator {
     ): Equation {
         val operation = getOperation(operationName) ?: throw Exception("Operation not found")
         val result = operation.operate(operands)
-        val equation = Equation(operands, operation, result)
+        val equation = Equation(operands.toList(), operation, result)
 
         _equations.add(equation)
         return equation

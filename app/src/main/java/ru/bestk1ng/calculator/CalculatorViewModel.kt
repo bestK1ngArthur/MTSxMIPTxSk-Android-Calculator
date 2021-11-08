@@ -149,9 +149,6 @@ class CalculatorViewModel(private val calculator: Calculator, private val contex
     }
 
     private fun formatValue(value: Double): String {
-        println("FORMAT VALUE = ${value}")
-        println("ACCURACY = ${settings.accuracy}")
-
         val intValue = value.toInt()
 
         return if ((value - intValue) > 0) {
