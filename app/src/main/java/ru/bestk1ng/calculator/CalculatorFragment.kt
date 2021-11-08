@@ -22,7 +22,7 @@ import android.widget.Toast
 class CalculatorFragment : Fragment(R.layout.calculator_fragment) {
     private val viewBinding by viewBinding(CalculatorFragmentBinding::bind)
     private val viewModel: CalculatorViewModel by viewModels() {
-        CalculatorViewModel.Factory(Calculator(), requireContext())
+        CalculatorViewModel.Factory(Calculator, requireContext())
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.bestk1ng.calculator.helpers.Equation
 
 class HistoryAdapter(
-    private val equations: Array<Equation>,
+    private val equations: List<Equation>,
     private val onItemClick: ((Equation) -> Unit)
     ) : RecyclerView.Adapter<HistoryAdapter.ViewHolder>() {
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {

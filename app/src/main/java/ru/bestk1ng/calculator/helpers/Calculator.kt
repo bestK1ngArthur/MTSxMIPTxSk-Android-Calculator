@@ -2,7 +2,10 @@ package ru.bestk1ng.calculator.helpers
 
 import java.lang.Exception
 
-class Calculator {
+object Calculator {
+    val equations: List<Equation>
+        get() = _equations
+
     private val operations = setOf(
         SumOperation(),
         SubtractOperation(),
@@ -11,7 +14,8 @@ class Calculator {
         PowerOperation(),
         RootOperation()
     )
-    private val equations = mutableListOf<Equation>()
+
+    private val _equations = mutableListOf<Equation>()
 
     fun calculate(
         operands: List<Double>,
@@ -21,12 +25,12 @@ class Calculator {
         val result = operation.operate(operands)
         val equation = Equation(operands, operation, result)
 
-        equations.add(equation)
+        _equations.add(equation)
         return equation
     }
 
     fun reset() {
-        equations.clear()
+        _equations.clear()
     }
 
     private fun getOperation(name: OperationName): Operation? {

@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -22,7 +23,7 @@ import ru.bestk1ng.calculator.helpers.SumOperation
 class HistoryFragment : Fragment() {
     private val viewBinding by viewBinding(HistoryFragmentBinding::bind)
     private val viewModel: HistoryViewModel by viewModels() {
-        HistoryViewModel.Factory(Calculator())
+        HistoryViewModel.Factory(Calculator)
     }
 
     override fun onCreateView(
@@ -36,21 +37,20 @@ class HistoryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val recyclerView: RecyclerView = viewBinding.recyclerView
-
-        val adapter = HistoryAdapter(arrayOf(
-            Equation(listOf(1.0, 2.0), SumOperation(), 3.0),
-            Equation(listOf(3.0, 1.0), SubtractOperation(), 2.0))
-        ) { equation ->
-            println("CLICK ON ITEM $equation")
-        }
-
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.adapter = adapter
 
         with(viewBinding) {
             keyButtonBack.setOnClickListener {
                 view.findNavController().popBackStack()
             }
+
+            viewModel.equations.observe(viewLifecycleOwner, Observer { equations ->
+                recyclerView.adapter = HistoryAdapter(equations) { equation ->
+                    println("CLICK ON ITEM $equation")
+                }
+            })
         }
+
+        viewModel.onAppear()
     }
 }
