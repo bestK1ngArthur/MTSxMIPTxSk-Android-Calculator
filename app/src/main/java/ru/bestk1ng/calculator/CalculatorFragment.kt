@@ -16,7 +16,6 @@ import ru.bestk1ng.calculator.helpers.Calculator
 
 import android.os.Vibrator
 import android.widget.Toast
-import ru.bestk1ng.calculator.helpers.Equation
 
 /**
  * Calculator Fragment.
@@ -109,14 +108,6 @@ class CalculatorFragment : Fragment(R.layout.calculator_fragment) {
                 vibrate(viewModel.vibroValue)
             }
         }
-
-
-//        viewModel.onEquation(args.equation)
-//        try {
-//            viewModel.onEquation(equation.equation)
-//        } catch (error: Error) {
-//            println("Error $error")
-//        }
 
         if ((args.result != null) && (args.operands != null)) {
             viewModel.onEquation(args.operands!!, args.result!!)
