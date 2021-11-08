@@ -21,7 +21,7 @@ Simple calculator app for educational purposes
 ## Screenshots
 
 <p align="left">
-  <img width=200 src="https://github.com/bestK1ngArthur/MTSxMIPTxSk-Android-Calculator/blob/main/Screenshots/Screenshot-Main.png" alt="Icon"/>
-  <img width=200 src="https://github.com/bestK1ngArthur/MTSxMIPTxSk-Android-Calculator/blob/main/Screenshots/Screenshot-History.png" alt="Icon"/>
-  <img width=200 src="https://github.com/bestK1ngArthur/MTSxMIPTxSk-Android-Calculator/blob/main/Screenshots/Screenshot-Settings.png" alt="Icon"/>
+  <img width=200 src="https://github.com/bestK1ngArthur/MTSxMIPTxSk-Android-Calculator/blob/main/images/screenshot-main.png" alt="Icon"/>
+  <img width=200 src="https://github.com/bestK1ngArthur/MTSxMIPTxSk-Android-Calculator/blob/main/images/screenshot-history.png" alt="Icon"/>
+  <img width=200 src="https://github.com/bestK1ngArthur/MTSxMIPTxSk-Android-Calculator/blob/main/images/screenshot-settings.png" alt="Icon"/>
 </p>

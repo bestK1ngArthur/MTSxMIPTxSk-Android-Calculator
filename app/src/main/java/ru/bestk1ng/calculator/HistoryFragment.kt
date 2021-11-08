@@ -47,11 +47,10 @@ class HistoryFragment : Fragment() {
 
             viewModel.equations.observe(viewLifecycleOwner, Observer { equations ->
                 recyclerView.adapter = HistoryAdapter(equations) { item ->
-                    println("CLICK ON ITEM $item")
 
+                    // FIXME: Workaround to send args in action
                     val operands = item.text.split(" = ")[0]
                     val result = item.text.split(" = ")[1]
-
 
                     view.findNavController().navigate(
                         HistoryFragmentDirections.actionHistoryFragmentToCalculatorFragment(operands, result)

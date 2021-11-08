@@ -120,6 +120,7 @@ class CalculatorFragment : Fragment(R.layout.calculator_fragment) {
         val vibrator = getSystemService(requireContext(), Vibrator::class.java)
         vibrator?.vibrate(VibrationEffect.createOneShot(100, value!!))
 
-//        Toast.makeText(requireContext(), "Vibrate with ${value!!}", Toast.LENGTH_SHORT).show()
+        // To debug vibration on simulator
+        // Toast.makeText(requireContext(), "Vibrate with ${value!!}", Toast.LENGTH_SHORT).show()
     }
 }
