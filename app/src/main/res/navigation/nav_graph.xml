@@ -16,6 +16,16 @@
         <action
             android:id="@+id/action_CalculatorFragment_to_HistoryFragment"
             app:destination="@id/HistoryFragment" />
+        <argument
+            android:name="operands"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <argument
+            android:name="result"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
     </fragment>
 
     <fragment
@@ -28,5 +38,9 @@
         android:id="@+id/HistoryFragment"
         android:name="ru.bestk1ng.calculator.HistoryFragment"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/history_fragment"/>
+        tools:layout="@layout/history_fragment">
+        <action
+            android:id="@+id/action_HistoryFragment_to_CalculatorFragment"
+            app:destination="@id/CalculatorFragment" />
+    </fragment>
 </navigation>

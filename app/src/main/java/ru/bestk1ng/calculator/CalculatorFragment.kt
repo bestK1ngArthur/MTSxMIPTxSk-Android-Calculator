@@ -7,14 +7,16 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.navArgs
+import androidx.core.content.ContextCompat.getSystemService
 import by.kirich1409.viewbindingdelegate.viewBinding
 
 import ru.bestk1ng.calculator.databinding.CalculatorFragmentBinding
 import ru.bestk1ng.calculator.helpers.Calculator
-import androidx.core.content.ContextCompat.getSystemService
 
 import android.os.Vibrator
 import android.widget.Toast
+import ru.bestk1ng.calculator.helpers.Equation
 
 /**
  * Calculator Fragment.
@@ -24,6 +26,8 @@ class CalculatorFragment : Fragment(R.layout.calculator_fragment) {
     private val viewModel: CalculatorViewModel by viewModels() {
         CalculatorViewModel.Factory(Calculator, requireContext())
     }
+
+    private val args: CalculatorFragmentArgs by navArgs()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -104,6 +108,18 @@ class CalculatorFragment : Fragment(R.layout.calculator_fragment) {
                 view.findNavController().navigate(action)
                 vibrate(viewModel.vibroValue)
             }
+        }
+
+
+//        viewModel.onEquation(args.equation)
+//        try {
+//            viewModel.onEquation(equation.equation)
+//        } catch (error: Error) {
+//            println("Error $error")
+//        }
+
+        if ((args.result != null) && (args.operands != null)) {
+            viewModel.onEquation(args.operands!!, args.result!!)
         }
     }
 

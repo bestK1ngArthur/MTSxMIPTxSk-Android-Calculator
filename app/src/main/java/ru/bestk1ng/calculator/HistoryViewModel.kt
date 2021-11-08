@@ -44,7 +44,7 @@ class HistoryViewModel(
             string += "${ formatValue(operand) } "
 
             if (index != equation.operands.size - 1) {
-                string += "${equation.operation.name.symbol} "
+                string += "${equation.operation} "
             }
         }
 

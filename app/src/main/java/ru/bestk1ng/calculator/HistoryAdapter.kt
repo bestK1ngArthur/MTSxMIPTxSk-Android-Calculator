@@ -10,14 +10,14 @@ import ru.bestk1ng.calculator.helpers.Equation
 
 class HistoryAdapter(
     private val equations: List<EquationItem>,
-    private val onItemClick: ((Equation) -> Unit)
+    private val onItemClick: ((EquationItem) -> Unit)
     ) : RecyclerView.Adapter<HistoryAdapter.ViewHolder>() {
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val equationTextView: TextView = view.findViewById(R.id.equation_textView)
 
         init {
             itemView.setOnClickListener {
-                onItemClick?.invoke(equations[adapterPosition].equation)
+                onItemClick?.invoke(equations[adapterPosition])
             }
         }
     }

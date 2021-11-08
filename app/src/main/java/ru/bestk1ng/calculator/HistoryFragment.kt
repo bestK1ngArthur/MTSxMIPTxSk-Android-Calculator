@@ -10,6 +10,7 @@ import android.widget.SeekBar
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -45,8 +46,16 @@ class HistoryFragment : Fragment() {
             }
 
             viewModel.equations.observe(viewLifecycleOwner, Observer { equations ->
-                recyclerView.adapter = HistoryAdapter(equations) { equation ->
-                    println("CLICK ON ITEM $equation")
+                recyclerView.adapter = HistoryAdapter(equations) { item ->
+                    println("CLICK ON ITEM $item")
+
+                    val operands = item.text.split(" = ")[0]
+                    val result = item.text.split(" = ")[1]
+
+
+                    view.findNavController().navigate(
+                        HistoryFragmentDirections.actionHistoryFragmentToCalculatorFragment(operands, result)
+                    )
                 }
             })
         }

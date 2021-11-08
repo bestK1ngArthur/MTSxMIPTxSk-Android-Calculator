@@ -6,12 +6,15 @@ import org.junit.Assert.*
 import org.junit.Rule
 import org.junit.rules.TestRule
 import ru.bestk1ng.calculator.helpers.Calculator
+import androidx.test.platform.app.InstrumentationRegistry
+import org.junit.Before
 
 /**
  * CalculatorViewModel Unit Tests
  */
 class CalculatorViewModelTest {
-    private val viewModel = CalculatorViewModel(Calculator())
+    private var viewModel: CalculatorViewModel =
+        CalculatorViewModel(Calculator, InstrumentationRegistry.getInstrumentation().targetContext)
 
     @get:Rule
     var rule: TestRule = InstantTaskExecutorRule()

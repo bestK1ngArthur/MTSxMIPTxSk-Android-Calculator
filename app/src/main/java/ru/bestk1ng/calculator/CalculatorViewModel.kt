@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 
 import ru.bestk1ng.calculator.helpers.Calculator
+import ru.bestk1ng.calculator.helpers.Equation
 import ru.bestk1ng.calculator.helpers.OperationName
 import ru.bestk1ng.calculator.helpers.Settings
 
@@ -118,6 +119,19 @@ class CalculatorViewModel(private val calculator: Calculator, private val contex
 
         currentOperand = -1.0 * currentOperand!!
         _result.postValue(formatValue(currentOperand!!))
+    }
+
+    fun onEquation(operands: String, result: String) {
+        this.operands.clear()
+
+        currentOperand = result.toDouble()
+        currentOperationName = null
+
+        _expression.postValue("$operands")
+//        _expression.postValue("${ formatValue(operands[0]) } ${equation.operation} ${ formatValue(operands[1]) }")
+        _result.postValue(formatValue(currentOperand!!))
+
+        isAfterResult = true
     }
 
     private fun onSimpleOperation(name: String) {
