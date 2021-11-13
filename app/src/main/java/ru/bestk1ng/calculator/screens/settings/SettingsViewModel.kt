@@ -1,4 +1,4 @@
-package ru.bestk1ng.calculator
+package ru.bestk1ng.calculator.screens.settings
 
 import android.content.Context
 import androidx.lifecycle.LiveData

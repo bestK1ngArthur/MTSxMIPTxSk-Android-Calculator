@@ -1,4 +1,4 @@
-package ru.bestk1ng.calculator
+package ru.bestk1ng.calculator.screens.calculator
 
 import android.content.Context
 import androidx.lifecycle.LiveData
@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 
 import ru.bestk1ng.calculator.helpers.Calculator
-import ru.bestk1ng.calculator.helpers.Equation
 import ru.bestk1ng.calculator.helpers.OperationName
 import ru.bestk1ng.calculator.helpers.Settings
 

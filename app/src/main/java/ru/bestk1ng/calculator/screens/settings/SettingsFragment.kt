@@ -1,4 +1,4 @@
-package ru.bestk1ng.calculator
+package ru.bestk1ng.calculator.screens.settings
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
+import ru.bestk1ng.calculator.R
 
 import ru.bestk1ng.calculator.databinding.SettingsFragmentBinding
 

@@ -1,12 +1,11 @@
-package ru.bestk1ng.calculator
+package ru.bestk1ng.calculator.screens.history
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-
-import ru.bestk1ng.calculator.helpers.Equation
+import ru.bestk1ng.calculator.R
 
 class HistoryAdapter(
     private val equations: List<EquationItem>,

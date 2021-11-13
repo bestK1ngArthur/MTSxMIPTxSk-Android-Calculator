@@ -7,7 +7,7 @@ import org.junit.Rule
 import org.junit.rules.TestRule
 import ru.bestk1ng.calculator.helpers.Calculator
 import androidx.test.platform.app.InstrumentationRegistry
-import org.junit.Before
+import ru.bestk1ng.calculator.screens.calculator.CalculatorViewModel
 
 /**
  * CalculatorViewModel Unit Tests

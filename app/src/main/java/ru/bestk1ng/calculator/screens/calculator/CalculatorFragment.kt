@@ -1,21 +1,20 @@
-package ru.bestk1ng.calculator
+package ru.bestk1ng.calculator.screens.calculator
 
 import android.os.Bundle
 import android.os.VibrationEffect
+import android.os.Vibrator
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.core.content.ContextCompat.getSystemService
+import androidx.lifecycle.Observer
 import by.kirich1409.viewbindingdelegate.viewBinding
 
 import ru.bestk1ng.calculator.databinding.CalculatorFragmentBinding
 import ru.bestk1ng.calculator.helpers.Calculator
-
-import android.os.Vibrator
-import android.widget.Toast
+import ru.bestk1ng.calculator.R
 
 /**
  * Calculator Fragment.
